@@ -44,17 +44,34 @@ function getDetails(video){
     });
 }
 
-
+// Calling method 1
 // loginUser("Aditya@gmail.com","12345678")
-// .then((user) => {console.log(user.userEmail); getUserVideos(user.userEmail)})
+// .then((user) => {
+//     console.log(user.userEmail); 
+//     getUserVideos(user.userEmail).then((video) =>{
+//         console.log(video[0]);
+//         getDetails(video[0]).then((details) => {
+//             console.log(details);
+//         });
+//     });
+// });
+
+// Calling method 2
+loginUser("Aditya@gmail.com","12345678")
+.then((user) => {
+    console.log(user.userEmail); 
+    return getUserVideos(user.userEmail);
+}).then((video) => {
+    console.log(video[0]);
+    return getDetails(video[0]);
+}).then((detail) => {
+    console.log(detail);
+});
+
+// Calling method 3
+// loginUser("Aditya@gmail.com","12345678")
+// .then(user => getUserVideos(user.userEmail))
 // .then(videos => getDetails(videos[0]))
 // .then(detail => console.log(detail));
-
-
-
-loginUser("Aditya@gmail.com","12345678")
-.then(user => getUserVideos(user.userEmail))
-.then(videos => getDetails(videos[0]))
-.then(detail => console.log(detail));
 
 console.log("End");
