@@ -162,7 +162,7 @@ var students = [
 var c = students.map(function(allData){
     return allData.name;
 });
-console.log('filter()      : ',c);
+console.log('map()          : ',c);
 // Used for accessing individual values of array and modify them
 
 

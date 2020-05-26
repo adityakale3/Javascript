@@ -5,10 +5,10 @@ function getCovidapi(){
     const jsonData = fetch('https://ghoapi.azureedge.net/api/DIMENSION/COUNTRY/DimensionValues')
 //    const jsonData = fetch('https://covidtracking.com/api/states/info')
                      .then((apiData) => {
-                        console.log(apiData);
+                        //console.log(apiData);
                         return apiData.json();    
                     }).then((jsonData) => {
-                        console.log(jsonData);
+                        console.log(jsonData.value[175]);
                     }).catch((err) => {
                         console.log(err.message);
                     });
