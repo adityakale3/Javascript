@@ -1,0 +1,2 @@
+collection = Table
+document = row
